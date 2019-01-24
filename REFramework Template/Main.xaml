@@ -80,6 +80,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <StateMachine sap2010:Annotation.AnnotationText="-- ReFrameWork - Robotic Enterprise Framework --&#xA;-- TEMPLATE--" DisplayName="General Business Process" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -137,140 +138,148 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <Sequence DisplayName="Read Assets Sequence" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="tempUsername" />
-                    <Variable x:TypeArguments="ss:SecureString" Name="tempPassword" />
-                  </Sequence.Variables>
-                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Email" DisplayName="Get Credential" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[tempPassword]" Username="[tempUsername]" />
-                  <Assign sap2010:WorkflowViewState.IdRef="Assign_20">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[Config("EmailPassword")]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Object">[tempPassword]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Assign sap2010:WorkflowViewState.IdRef="Assign_21">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[Config("EmailUsername")]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Object">[tempUsername]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                </Sequence>
-                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders and Address" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Data\Orders.xlsx">
-                  <ui:ExcelApplicationScope.Body>
-                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="sd:DataTable" Name="dtAddress" />
-                          <Variable x:TypeArguments="sd:DataTable" Name="dtOrders" />
-                          <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="userInfo" />
-                        </Sequence.Variables>
-                        <ui:ExcelReadRange AddHeaders="True" DataTable="[dtOrders]" DisplayName="Read Range - Orders" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Orders">
-                          <ui:ExcelReadRange.Range>
-                            <InArgument x:TypeArguments="x:String">
-                              <Literal x:TypeArguments="x:String" Value="" />
-                            </InArgument>
-                          </ui:ExcelReadRange.Range>
-                        </ui:ExcelReadRange>
-                        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtOrders]" DisplayName="For Each Row" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                          <ui:ForEachRow.Body>
-                            <ActivityAction x:TypeArguments="sd:DataRow">
+                <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence DisplayName="moved to InitAllSettings Sequence" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <Sequence DisplayName="Read Assets Sequence" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="tempUsername" />
+                            <Variable x:TypeArguments="ss:SecureString" Name="tempPassword" />
+                          </Sequence.Variables>
+                          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Email" DisplayName="Get Credential" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[tempPassword]" Username="[tempUsername]" />
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_20">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[Config("EmailPassword")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[tempPassword]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap2010:WorkflowViewState.IdRef="Assign_21">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[Config("EmailUsername")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[tempUsername]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Orders and Address" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Data\Orders.xlsx">
+                          <ui:ExcelApplicationScope.Body>
+                            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                               <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                                <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                  <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                                      <ui:AddTransactionItem ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" TransactionItem="{x:Null}" DisplayName="Add Transaction Item" sap2010:WorkflowViewState.IdRef="AddTransactionItem_1" QueueType="ProductQueue">
-                                        <ui:AddTransactionItem.TransactionInformation>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Product">[row("Product").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Quantity">[row("Quantity").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Status">
-                                            <Literal x:TypeArguments="x:String" Value="" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Notes">
-                                            <Literal x:TypeArguments="x:String" Value="" />
-                                          </InArgument>
-                                        </ui:AddTransactionItem.TransactionInformation>
-                                      </ui:AddTransactionItem>
-                                    </Sequence>
-                                  </ui:CommentOut.Body>
-                                </ui:CommentOut>
-                                <ui:AddTransactionItem ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" TransactionItem="{x:Null}" DisplayName="Add Transaction Item" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="ProductQueue">
-                                  <ui:AddTransactionItem.TransactionInformation>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Product">[row("Product").ToString]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Quantity">[row("Quantity").ToString]</InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Status">
+                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="sd:DataTable" Name="dtAddress" />
+                                  <Variable x:TypeArguments="sd:DataTable" Name="dtOrders" />
+                                  <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="userInfo" />
+                                </Sequence.Variables>
+                                <ui:ExcelReadRange AddHeaders="True" DataTable="[dtOrders]" DisplayName="Read Range - Orders" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Orders">
+                                  <ui:ExcelReadRange.Range>
+                                    <InArgument x:TypeArguments="x:String">
                                       <Literal x:TypeArguments="x:String" Value="" />
                                     </InArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="Notes">
+                                  </ui:ExcelReadRange.Range>
+                                </ui:ExcelReadRange>
+                                <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtOrders]" DisplayName="For Each Row" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                  <ui:ForEachRow.Body>
+                                    <ActivityAction x:TypeArguments="sd:DataRow">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                      </ActivityAction.Argument>
+                                      <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                        <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                              <ui:AddTransactionItem ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" TransactionItem="{x:Null}" DisplayName="Add Transaction Item" sap2010:WorkflowViewState.IdRef="AddTransactionItem_1" QueueType="ProductQueue">
+                                                <ui:AddTransactionItem.TransactionInformation>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Product">[row("Product").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Quantity">[row("Quantity").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Status">
+                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Notes">
+                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                  </InArgument>
+                                                </ui:AddTransactionItem.TransactionInformation>
+                                              </ui:AddTransactionItem>
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                        </ui:CommentOut>
+                                        <ui:AddTransactionItem ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" TransactionItem="{x:Null}" DisplayName="Add Transaction Item" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="ProductQueue">
+                                          <ui:AddTransactionItem.TransactionInformation>
+                                            <InArgument x:TypeArguments="x:String" x:Key="Product">[row("Product").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="Quantity">[row("Quantity").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="Status">
+                                              <Literal x:TypeArguments="x:String" Value="" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="Notes">
+                                              <Literal x:TypeArguments="x:String" Value="" />
+                                            </InArgument>
+                                          </ui:AddTransactionItem.TransactionInformation>
+                                        </ui:AddTransactionItem>
+                                        <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                          <ui:CommentOut.Body>
+                                            <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                              <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="ProductQueue">
+                                                <ui:AddQueueItem.ItemInformation>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Product">[row("Product").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Quantity">[row("Quantity").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Status">
+                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="Notes">
+                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                  </InArgument>
+                                                </ui:AddQueueItem.ItemInformation>
+                                              </ui:AddQueueItem>
+                                            </Sequence>
+                                          </ui:CommentOut.Body>
+                                        </ui:CommentOut>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:ForEachRow.Body>
+                                </ui:ForEachRow>
+                                <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Read Orders&quot;]" />
+                                <ui:ExcelReadRange AddHeaders="True" DataTable="[dtAddress]" DisplayName="Read Range - Address" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Address">
+                                  <ui:ExcelReadRange.Range>
+                                    <InArgument x:TypeArguments="x:String">
                                       <Literal x:TypeArguments="x:String" Value="" />
                                     </InArgument>
-                                  </ui:AddTransactionItem.TransactionInformation>
-                                </ui:AddTransactionItem>
-                                <ui:CommentOut DisplayName="Comment Out" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                  <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_27">
-                                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="ProductQueue">
-                                        <ui:AddQueueItem.ItemInformation>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Product">[row("Product").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Quantity">[row("Quantity").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Status">
-                                            <Literal x:TypeArguments="x:String" Value="" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="Notes">
-                                            <Literal x:TypeArguments="x:String" Value="" />
-                                          </InArgument>
-                                        </ui:AddQueueItem.ItemInformation>
-                                      </ui:AddQueueItem>
-                                    </Sequence>
-                                  </ui:CommentOut.Body>
-                                </ui:CommentOut>
+                                  </ui:ExcelReadRange.Range>
+                                </ui:ExcelReadRange>
+                                <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Read Address&quot;]" />
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_22">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[userInfo]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(Of String,String) From { {"FirstName",dtAddress(0)("First Name").toString},{"Last Name",dtAddress(0)("Last Name").toString },{"Street Address",dtAddress(0)("Street Address").toString},{"ZIP Code",dtAddress(0)("ZIP Code").toString},{"Area Code",dtAddress(0)("Area Code").toString},{"Primary Phone",dtAddress(0)("Primary Phone").toString} }]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_23">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Object">[Config("userInfo")]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Object">[userInfo]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
                               </Sequence>
                             </ActivityAction>
-                          </ui:ForEachRow.Body>
-                        </ui:ForEachRow>
-                        <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Read Orders&quot;]" />
-                        <ui:ExcelReadRange AddHeaders="True" DataTable="[dtAddress]" DisplayName="Read Range - Address" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Address">
-                          <ui:ExcelReadRange.Range>
-                            <InArgument x:TypeArguments="x:String">
-                              <Literal x:TypeArguments="x:String" Value="" />
-                            </InArgument>
-                          </ui:ExcelReadRange.Range>
-                        </ui:ExcelReadRange>
-                        <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Read Address&quot;]" />
-                        <Assign sap2010:WorkflowViewState.IdRef="Assign_22">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[userInfo]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(Of String,String) From { {"FirstName",dtAddress(0)("First Name").toString},{"Last Name",dtAddress(0)("Last Name").toString },{"Street Address",dtAddress(0)("Street Address").toString},{"ZIP Code",dtAddress(0)("ZIP Code").toString},{"Area Code",dtAddress(0)("Area Code").toString},{"Primary Phone",dtAddress(0)("Primary Phone").toString} }]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign>
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Object">[Config("userInfo")]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Object">[userInfo]</InArgument>
-                          </Assign.Value>
-                          <sap2010:WorkflowViewState.IdRef>Assign_23</sap2010:WorkflowViewState.IdRef>
-                        </Assign>
+                          </ui:ExcelApplicationScope.Body>
+                        </ui:ExcelApplicationScope>
                       </Sequence>
-                    </ActivityAction>
-                  </ui:ExcelApplicationScope.Body>
-                </ui:ExcelApplicationScope>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                </ui:CommentOut>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                    <InArgument x:TypeArguments="ui:Browser" x:Key="out_Browser">[browser]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
@@ -529,8 +538,9 @@
       <Variable x:TypeArguments="x:String" Name="TransactionField1" />
       <Variable x:TypeArguments="x:String" Name="TransactionID" />
       <Variable x:TypeArguments="sd:DataTable" Name="TransactionData" />
+      <Variable x:TypeArguments="ui:Browser" Name="browser" />
     </StateMachine.Variables>
-    <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0tDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxNYWluLnhhbWx2VgOgBBICAQGWBDOWBDYDAbIBmAQzmAQ2AwGxAbUCD/4DFwIBfPUCF84DHwIBRtcDF/YDHwIBOVgHjAQPAgECtwIT8AIeAwGHAdMDK9MDSgMBhQHRAxfRA+EBAwGBAfsDK/sDRwMBgAH5Axf5A8gBAgF+9wIbxwMmAgFNygOWAcoDswECAUrLA58BywPGAQIBScwDigLMA8kCAgFI2QMb9AMmAgE7WguwAhYCAQ6DBCODBDsCAQuBBA+BBJ0BAgEKiQQjiQQ+AgEIhwQPhwT2AQIBBLsCFbsCiwEDAa4BvAIV7wIaAwGIAdEDhQHRA94BAwGCAfkDhQH5A8UBAgF/+QIfiAMqAgFxqwMfxQMqAgFYkAMjlwMsAgFTnwMjpgMsAgFO2wMf4QMqAgFD6QMj8AMuAgE8XA+dAhoCARSlAhOsAhwCAQ+HBH2HBPMBAgEFuwJ6uwKIAQMBrwG8AiO8AjEDAYkBvgIZyAIkAwGnAcsCGe0CJAMBiwH6AiGBAyoCAXiCAyGHAzkCAXKtAyO5AzsCAV3BAyfBA4cCAgFZlQNelQNpAgFWkgNfkgN2AgFUpANRpANcAgFRoQNSoQNfAgFP3AMh4AM5AgFE6gMl6gOJAgIBP+sDJe8DPQIBPV0RZBoCATVlEYwBFgIBHI0BEZYCIQIBG5cCEZwCKQIBFaoCQaoCTAIBEqcCQqcCTwIBEL8CG78CtwEDAawBwAIbxwIkAwGoAc0CHdcCNQMBlwHfAiHpAiwDAYwB/wJc/wJlAgF7/AJd/AJ0AgF5hQN4hQOAAQIBdoQDa4QDfAIBdIID2wGCA+kBAgFzsANosAN1AgFvsQN/sQOWAQIBbbYDa7YDfgIBa7UDa7UDfgIBabMDZ7MDdAIBZ68Deq8DggECAWWyA22yA34CAWO0A220A4ABAgFhtwNntwN2AgFfrQPgAa0DhQICAV7BA5YBwQOEAgIBWtwD3QHcA4ICAgFF6gOTAeoDhgICAUDrA90B6wP+AQIBPmI/YkgCAThfQF9NAgE2ZR9lNAIBHWcVigEgAgEfmgJSmgJbAgEZmQJomQJwAgEXlwLNAZcC8QECARa/Ao4BvwK0AQMBrQHFAkrFAlMDAasBwgJLwgJcAwGpAdMCZ9MCegMBpQHSAmfSAnoDAaMB1AJj1AJyAwGhAdECadECegMBnwHPAmTPAncDAZ0B0AJ00AJ8AwGbAdUCatUCewMBmQHNAtgBzQL7AQMBmAHgAiPgAr4CAwGRAeECI+gCLAMBjQFoF24vAgEvbxd/IgIBJYABF4QBLwIBI4UBF4kBKQIBIOACkgHgArsCAwGSAeYCUuYCWwMBkAHjAlPjAmQDAY4BbHBseAIBM2jPAWjvAQIBMmtca3cCATFqWGpoAgEwcBl+HgIBJoAB0AGAAfEBAgEkhwFjhwGQAQIBIXAncFoCASdyHXkmAgEqfB18hQICASl3SHdfAgEtdEl0agIBKw==</sads:DebugSymbol.Symbol>
   </StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -581,7 +591,7 @@
       <sap2010:ViewStateData Id="GetRobotCredential_1" sap:VirtualizedContainerService.HintSize="243.2,22.4" />
       <sap2010:ViewStateData Id="Assign_20" sap:VirtualizedContainerService.HintSize="243.2,60" />
       <sap2010:ViewStateData Id="Assign_21" sap:VirtualizedContainerService.HintSize="243.2,60" />
-      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="314.4,52.8">
+      <sap2010:ViewStateData Id="Sequence_23" sap:VirtualizedContainerService.HintSize="200,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -643,7 +653,30 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ExcelApplicationScope_1" sap:VirtualizedContainerService.HintSize="414.4,1251.2">
+      <sap2010:ViewStateData Id="ExcelApplicationScope_1" sap:VirtualizedContainerService.HintSize="200,52.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_28" sap:VirtualizedContainerService.HintSize="200,52.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="222.4,177.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_3" sap:VirtualizedContainerService.HintSize="314.4,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -652,7 +685,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="314.4,88" />
-      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="336.8,591.2">
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="336.8,498.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -932,7 +965,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main2_1" sap:VirtualizedContainerService.HintSize="826.4,908.8" />
+      <sap2010:ViewStateData Id="Main2_1" sap:VirtualizedContainerService.HintSize="826.4,868.8" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
