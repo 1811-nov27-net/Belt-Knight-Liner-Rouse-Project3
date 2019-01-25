@@ -977,15 +977,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\linc2\\.nuget\\packages\\": {}
+    "C:\\Users\\dr906\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "UiPath_REFrameWork",
       "projectName": "UiPath_REFrameWork",
-      "projectPath": "C:\\revature\\Belt-Knight-Liner-Rouse-Project3\\REFramework Template\\.local",
-      "packagesPath": "C:\\Users\\linc2\\.nuget\\packages\\",
-      "outputPath": "C:\\revature\\Belt-Knight-Liner-Rouse-Project3\\REFramework Template\\.local"
+      "projectPath": "C:\\Revature\\UIPath\\Project_3\\Belt-Knight-Liner-Rouse-Project3\\REFramework Template\\.local",
+      "packagesPath": "C:\\Users\\dr906\\.nuget\\packages\\",
+      "outputPath": "C:\\Revature\\UIPath\\Project_3\\Belt-Knight-Liner-Rouse-Project3\\REFramework Template\\.local"
     },
     "frameworks": {
       "net461": {
