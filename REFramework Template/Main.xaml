@@ -78,7 +78,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
     </sco:Collection>
@@ -540,11 +539,11 @@
       <Variable x:TypeArguments="sd:DataTable" Name="TransactionData" />
       <Variable x:TypeArguments="ui:Browser" Name="browser" />
     </StateMachine.Variables>
-    <sads:DebugSymbol.Symbol>d0tDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxNYWluLnhhbWx2VgOgBBICAQGWBDOWBDYDAbIBmAQzmAQ2AwGxAbUCD/4DFwIBfPUCF84DHwIBRtcDF/YDHwIBOVgHjAQPAgECtwIT8AIeAwGHAdMDK9MDSgMBhQHRAxfRA+EBAwGBAfsDK/sDRwMBgAH5Axf5A8gBAgF+9wIbxwMmAgFNygOWAcoDswECAUrLA58BywPGAQIBScwDigLMA8kCAgFI2QMb9AMmAgE7WguwAhYCAQ6DBCODBDsCAQuBBA+BBJ0BAgEKiQQjiQQ+AgEIhwQPhwT2AQIBBLsCFbsCiwEDAa4BvAIV7wIaAwGIAdEDhQHRA94BAwGCAfkDhQH5A8UBAgF/+QIfiAMqAgFxqwMfxQMqAgFYkAMjlwMsAgFTnwMjpgMsAgFO2wMf4QMqAgFD6QMj8AMuAgE8XA+dAhoCARSlAhOsAhwCAQ+HBH2HBPMBAgEFuwJ6uwKIAQMBrwG8AiO8AjEDAYkBvgIZyAIkAwGnAcsCGe0CJAMBiwH6AiGBAyoCAXiCAyGHAzkCAXKtAyO5AzsCAV3BAyfBA4cCAgFZlQNelQNpAgFWkgNfkgN2AgFUpANRpANcAgFRoQNSoQNfAgFP3AMh4AM5AgFE6gMl6gOJAgIBP+sDJe8DPQIBPV0RZBoCATVlEYwBFgIBHI0BEZYCIQIBG5cCEZwCKQIBFaoCQaoCTAIBEqcCQqcCTwIBEL8CG78CtwEDAawBwAIbxwIkAwGoAc0CHdcCNQMBlwHfAiHpAiwDAYwB/wJc/wJlAgF7/AJd/AJ0AgF5hQN4hQOAAQIBdoQDa4QDfAIBdIID2wGCA+kBAgFzsANosAN1AgFvsQN/sQOWAQIBbbYDa7YDfgIBa7UDa7UDfgIBabMDZ7MDdAIBZ68Deq8DggECAWWyA22yA34CAWO0A220A4ABAgFhtwNntwN2AgFfrQPgAa0DhQICAV7BA5YBwQOEAgIBWtwD3QHcA4ICAgFF6gOTAeoDhgICAUDrA90B6wP+AQIBPmI/YkgCAThfQF9NAgE2ZR9lNAIBHWcVigEgAgEfmgJSmgJbAgEZmQJomQJwAgEXlwLNAZcC8QECARa/Ao4BvwK0AQMBrQHFAkrFAlMDAasBwgJLwgJcAwGpAdMCZ9MCegMBpQHSAmfSAnoDAaMB1AJj1AJyAwGhAdECadECegMBnwHPAmTPAncDAZ0B0AJ00AJ8AwGbAdUCatUCewMBmQHNAtgBzQL7AQMBmAHgAiPgAr4CAwGRAeECI+gCLAMBjQFoF24vAgEvbxd/IgIBJYABF4QBLwIBI4UBF4kBKQIBIOACkgHgArsCAwGSAeYCUuYCWwMBkAHjAlPjAmQDAY4BbHBseAIBM2jPAWjvAQIBMmtca3cCATFqWGpoAgEwcBl+HgIBJoAB0AGAAfEBAgEkhwFjhwGQAQIBIXAncFoCASdyHXkmAgEqfB18hQICASl3SHdfAgEtdEl0agIBKw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0tDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxNYWluLnhhbWx2VQOfBBICAQGVBDOVBDYDAbIBlwQzlwQ2AwGxAbQCD/0DFwIBfPQCF80DHwIBRtYDF/UDHwIBOVcHiwQPAgECtgIT7wIeAwGHAdIDK9IDSgMBhQHQAxfQA+EBAwGBAfoDK/oDRwMBgAH4Axf4A8gBAgF+9gIbxgMmAgFNyQOWAckDswECAUrKA58BygPGAQIBScsDigLLA8kCAgFI2AMb8wMmAgE7WQuvAhYCAQ6CBCOCBDsCAQuABA+ABJ0BAgEKiAQjiAQ+AgEIhgQPhgT2AQIBBLoCFboCiwEDAa4BuwIV7gIaAwGIAdADhQHQA94BAwGCAfgDhQH4A8UBAgF/+AIfhwMqAgFxqgMfxAMqAgFYjwMjlgMsAgFTngMjpQMsAgFO2gMf4AMqAgFD6AMj7wMuAgE8Ww+cAhoCARSkAhOrAhwCAQ+GBH2GBPMBAgEFugJ6ugKIAQMBrwG7AiO7AjEDAYkBvQIZxwIkAwGnAcoCGewCJAMBiwH5AiGAAyoCAXiBAyGGAzkCAXKsAyO4AzsCAV3AAyfAA4cCAgFZlANelANpAgFWkQNfkQN2AgFUowNRowNcAgFRoANSoANfAgFP2wMh3wM5AgFE6QMl6QOJAgIBP+oDJe4DPQIBPVwRYxoCATVkEYsBFgIBHIwBEZUCIQIBG5YCEZsCKQIBFakCQakCTAIBEqYCQqYCTwIBEL4CG74CtwEDAawBvwIbxgIkAwGoAcwCHdYCNQMBlwHeAiHoAiwDAYwB/gJc/gJlAgF7+wJd+wJ0AgF5hAN4hAOAAQIBdoMDa4MDfAIBdIED2wGBA+kBAgFzrwNorwN1AgFvsAN/sAOWAQIBbbUDa7UDfgIBa7QDa7QDfgIBabIDZ7IDdAIBZ64Deq4DggECAWWxA22xA34CAWOzA22zA4ABAgFhtgNntgN2AgFfrAPgAawDhQICAV7AA5YBwAOEAgIBWtsD3QHbA4ICAgFF6QOTAekDhgICAUDqA90B6gP+AQIBPmE/YUgCATheQF5NAgE2ZB9kNAIBHWYViQEgAgEfmQJSmQJbAgEZmAJomAJwAgEXlgLNAZYC8QECARa+Ao4BvgK0AQMBrQHEAkrEAlMDAasBwQJLwQJcAwGpAdICZ9ICegMBpQHRAmfRAnoDAaMB0wJj0wJyAwGhAdACadACegMBnwHOAmTOAncDAZ0BzwJ0zwJ8AwGbAdQCatQCewMBmQHMAtgBzAL7AQMBmAHfAiPfAr4CAwGRAeACI+cCLAMBjQFnF20vAgEvbhd+IgIBJX8XgwEvAgEjhAEXiAEpAgEg3wKSAd8CuwIDAZIB5QJS5QJbAwGQAeICU+ICZAMBjgFrcGt4AgEzZ88BZ+8BAgEyalxqdwIBMWlYaWgCATBvGX0eAgEmf9ABf/EBAgEkhgFjhgGQAQIBIW8nb1oCASdxHXgmAgEqex17hQICASl2SHZfAgEtc0lzagIBKw==</sads:DebugSymbol.Symbol>
   </StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="314.4,60" />
+      <sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="464,60" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_12" sap:VirtualizedContainerService.HintSize="314.4,88" />
       <sap2010:ViewStateData Id="Assign_19" sap:VirtualizedContainerService.HintSize="242,60" />
       <sap2010:ViewStateData Id="Comment_2" sap:VirtualizedContainerService.HintSize="314,112" />
@@ -580,7 +579,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="314.4,52.8">
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="464,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -669,14 +668,14 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="222.4,177.6">
+      <sap2010:ViewStateData Id="Sequence_29" sap:VirtualizedContainerService.HintSize="244.8,177.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="CommentOut_3" sap:VirtualizedContainerService.HintSize="314.4,52.8">
+      <sap2010:ViewStateData Id="CommentOut_3" sap:VirtualizedContainerService.HintSize="464,52.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -685,7 +684,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="InvokeWorkflowFile_5" sap:VirtualizedContainerService.HintSize="314.4,88" />
-      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="336.8,498.4">
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="486.4,1299.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -694,7 +693,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="Assign_14" sap:VirtualizedContainerService.HintSize="243.2,60" />
-      <sap2010:ViewStateData Id="Catch`1_3" sap:VirtualizedContainerService.HintSize="403.2,22.4">
+      <sap2010:ViewStateData Id="Catch`1_3" sap:VirtualizedContainerService.HintSize="400,22.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -702,7 +701,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TryCatch_2" sap:VirtualizedContainerService.HintSize="417.6,822.4">
+      <sap2010:ViewStateData Id="TryCatch_2" sap:VirtualizedContainerService.HintSize="414.4,187.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -806,7 +805,7 @@
       <sap2010:ViewStateData Id="Transition_4" sap:VirtualizedContainerService.HintSize="429.6,509.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">348.3,526 348.3,581.07041179391 580.442883441882,581.07041179391 580.442883441882,57.45 508.5,57.45</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">357.76,523.2 357.76,534.48 537.2,534.48 537.2,54.48 507.2,54.48</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">23</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">40</x:Int32>
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -816,7 +815,7 @@
       <sap2010:ViewStateData Id="Transition_1" sap:VirtualizedContainerService.HintSize="429.6,509.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">401.05,526 401.05,546.85787388342 557.351575130488,546.85787388342 557.351575130488,210.9 505.5,210.9</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">410.56,523.2 410.56,540.32 545.6,540.32 545.6,210.32 515.6,210.32</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -826,7 +825,7 @@
       <sap2010:ViewStateData Id="Transition_5" sap:VirtualizedContainerService.HintSize="429.6,553.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">443.25,526 443.25,541.2288010831 520.405481832256,541.2288010831 520.405481832256,250.1 505.5,250.1</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">452.8,523.2 452.8,549.68 545.6,549.68 545.6,249.68 515.6,249.68</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">59</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">52</x:Int32>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -837,7 +836,7 @@
       <sap2010:ViewStateData Id="State_3" sap:VirtualizedContainerService.HintSize="211.2,146.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">285,380</av:Point>
+            <av:Point x:Key="ShapeLocation">294.4,376.8</av:Point>
             <av:Size x:Key="ShapeSize">211.2,146.4</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">197</x:Double>
@@ -850,31 +849,31 @@
       <sap2010:ViewStateData Id="Transition_6" sap:VirtualizedContainerService.HintSize="429.6,802.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">390.1,279.9 390.1,309.9 390.6,309.9 390.6,380</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">400,279.2 400,376.8</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="InvokeWorkflowFile_6" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Sequence_20" sap:VirtualizedContainerService.HintSize="336,211">
+      <sap2010:ViewStateData Id="InvokeWorkflowFile_6" sap:VirtualizedContainerService.HintSize="314.4,88" />
+      <sap2010:ViewStateData Id="Sequence_20" sap:VirtualizedContainerService.HintSize="336.8,212.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="LogMessage_11" sap:VirtualizedContainerService.HintSize="314,93" />
+      <sap2010:ViewStateData Id="LogMessage_11" sap:VirtualizedContainerService.HintSize="314.4,92.8" />
       <sap2010:ViewStateData Id="InvokeWorkflowFile_7" sap:VirtualizedContainerService.HintSize="314.4,88" />
-      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="336,345">
+      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="336.8,345.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Catch`1_5" sap:VirtualizedContainerService.HintSize="404,22">
+      <sap2010:ViewStateData Id="Catch`1_5" sap:VirtualizedContainerService.HintSize="403.2,22.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -882,11 +881,11 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TryCatch_4" sap:VirtualizedContainerService.HintSize="418,443" />
+      <sap2010:ViewStateData Id="TryCatch_4" sap:VirtualizedContainerService.HintSize="417.6,444" />
       <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="124.8,106.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">73,188.5</av:Point>
+            <av:Point x:Key="ShapeLocation">7.6,156.8</av:Point>
             <av:Size x:Key="ShapeSize">124.8,106.4</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">110</x:Double>
@@ -899,7 +898,7 @@
       <sap2010:ViewStateData Id="Transition_7" sap:VirtualizedContainerService.HintSize="429.6,969.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">390,279.5 390,309.5 135,309.5 135,294.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">400,279.2 400,309.2 70,309.2 70,263.2</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -910,7 +909,7 @@
       <sap2010:ViewStateData Id="State_4" sap:VirtualizedContainerService.HintSize="231.2,98.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">274.5,181.5</av:Point>
+            <av:Point x:Key="ShapeLocation">284.4,180.8</av:Point>
             <av:Size x:Key="ShapeSize">231.2,98.4</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">217</x:Double>
@@ -925,7 +924,7 @@
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
-            <av:PointCollection x:Key="ConnectorLocation">391.7,98.1 391.7,128.1 390.1,128.1 390.1,181.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">390,94.8 390,124.8 400,124.8 400,180.8</av:PointCollection>
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -934,17 +933,17 @@
       <sap2010:ViewStateData Id="Transition_3" sap:VirtualizedContainerService.HintSize="429.6,802.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">391.7,98.1 391.7,128.1 129.16,128.1 129.16,188.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">390,94.8 390,124.8 63.76,124.8 63.76,156.8</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="443.2,1240.8">
+      <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="234.4,89.6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">274.5,8.5</av:Point>
+            <av:Point x:Key="ShapeLocation">272.8,5.2</av:Point>
             <av:Size x:Key="ShapeSize">234.4,89.6</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Double x:Key="StateContainerWidth">220</x:Double>
@@ -953,19 +952,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="786.4,788.8">
+      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="896,848.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <av:Point x:Key="ShapeLocation">70,12.5</av:Point>
-            <x:Double x:Key="StateContainerWidth">772</x:Double>
-            <x:Double x:Key="StateContainerHeight">708</x:Double>
-            <av:PointCollection x:Key="ConnectorLocation">130,50 160,50 160,52.5 274.5,52.5</av:PointCollection>
+            <x:Double x:Key="StateContainerWidth">881.3344261717549</x:Double>
+            <x:Double x:Key="StateContainerHeight">768.39201450319183</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">130,50.1 160,50.1 160,50 272.8,50</av:PointCollection>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Main2_1" sap:VirtualizedContainerService.HintSize="826.4,868.8" />
+      <sap2010:ViewStateData Id="Main2_1" sap:VirtualizedContainerService.HintSize="826.4,908.8" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
