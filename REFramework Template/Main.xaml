@@ -526,6 +526,7 @@
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
+    <State DisplayName="Collect Data and Send Invoice" sap2010:WorkflowViewState.IdRef="State_5" />
     <StateMachine.Variables>
       <Variable x:TypeArguments="ui:QueueItem" Name="TransactionItem" />
       <Variable x:TypeArguments="s:Exception" Name="SystemError" />
@@ -539,7 +540,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="TransactionData" />
       <Variable x:TypeArguments="ui:Browser" Name="browser" />
     </StateMachine.Variables>
-    <sads:DebugSymbol.Symbol>d0tDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxNYWluLnhhbWx2VQOfBBICAQGVBDOVBDYDAbIBlwQzlwQ2AwGxAbQCD/0DFwIBfPQCF80DHwIBRtYDF/UDHwIBOVcHiwQPAgECtgIT7wIeAwGHAdIDK9IDSgMBhQHQAxfQA+EBAwGBAfoDK/oDRwMBgAH4Axf4A8gBAgF+9gIbxgMmAgFNyQOWAckDswECAUrKA58BygPGAQIBScsDigLLA8kCAgFI2AMb8wMmAgE7WQuvAhYCAQ6CBCOCBDsCAQuABA+ABJ0BAgEKiAQjiAQ+AgEIhgQPhgT2AQIBBLoCFboCiwEDAa4BuwIV7gIaAwGIAdADhQHQA94BAwGCAfgDhQH4A8UBAgF/+AIfhwMqAgFxqgMfxAMqAgFYjwMjlgMsAgFTngMjpQMsAgFO2gMf4AMqAgFD6AMj7wMuAgE8Ww+cAhoCARSkAhOrAhwCAQ+GBH2GBPMBAgEFugJ6ugKIAQMBrwG7AiO7AjEDAYkBvQIZxwIkAwGnAcoCGewCJAMBiwH5AiGAAyoCAXiBAyGGAzkCAXKsAyO4AzsCAV3AAyfAA4cCAgFZlANelANpAgFWkQNfkQN2AgFUowNRowNcAgFRoANSoANfAgFP2wMh3wM5AgFE6QMl6QOJAgIBP+oDJe4DPQIBPVwRYxoCATVkEYsBFgIBHIwBEZUCIQIBG5YCEZsCKQIBFakCQakCTAIBEqYCQqYCTwIBEL4CG74CtwEDAawBvwIbxgIkAwGoAcwCHdYCNQMBlwHeAiHoAiwDAYwB/gJc/gJlAgF7+wJd+wJ0AgF5hAN4hAOAAQIBdoMDa4MDfAIBdIED2wGBA+kBAgFzrwNorwN1AgFvsAN/sAOWAQIBbbUDa7UDfgIBa7QDa7QDfgIBabIDZ7IDdAIBZ64Deq4DggECAWWxA22xA34CAWOzA22zA4ABAgFhtgNntgN2AgFfrAPgAawDhQICAV7AA5YBwAOEAgIBWtsD3QHbA4ICAgFF6QOTAekDhgICAUDqA90B6gP+AQIBPmE/YUgCATheQF5NAgE2ZB9kNAIBHWYViQEgAgEfmQJSmQJbAgEZmAJomAJwAgEXlgLNAZYC8QECARa+Ao4BvgK0AQMBrQHEAkrEAlMDAasBwQJLwQJcAwGpAdICZ9ICegMBpQHRAmfRAnoDAaMB0wJj0wJyAwGhAdACadACegMBnwHOAmTOAncDAZ0BzwJ0zwJ8AwGbAdQCatQCewMBmQHMAtgBzAL7AQMBmAHfAiPfAr4CAwGRAeACI+cCLAMBjQFnF20vAgEvbhd+IgIBJX8XgwEvAgEjhAEXiAEpAgEg3wKSAd8CuwIDAZIB5QJS5QJbAwGQAeICU+ICZAMBjgFrcGt4AgEzZ88BZ+8BAgEyalxqdwIBMWlYaWgCATBvGX0eAgEmf9ABf/EBAgEkhgFjhgGQAQIBIW8nb1oCASdxHXgmAgEqex17hQICASl2SHZfAgEtc0lzagIBKw==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0tDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxNYWluLnhhbWx2VQOgBBICAQGWBDOWBDYDAbIBmAQzmAQ2AwGxAbQCD/0DFwIBfPQCF80DHwIBRtYDF/UDHwIBOVcHiwQPAgECtgIT7wIeAwGHAdIDK9IDSgMBhQHQAxfQA+EBAwGBAfoDK/oDRwMBgAH4Axf4A8gBAgF+9gIbxgMmAgFNyQOWAckDswECAUrKA58BygPGAQIBScsDigLLA8kCAgFI2AMb8wMmAgE7WQuvAhYCAQ6CBCOCBDsCAQuABA+ABJ0BAgEKiAQjiAQ+AgEIhgQPhgT2AQIBBLoCFboCiwEDAa4BuwIV7gIaAwGIAdADhQHQA94BAwGCAfgDhQH4A8UBAgF/+AIfhwMqAgFxqgMfxAMqAgFYjwMjlgMsAgFTngMjpQMsAgFO2gMf4AMqAgFD6AMj7wMuAgE8Ww+cAhoCARSkAhOrAhwCAQ+GBH2GBPMBAgEFugJ6ugKIAQMBrwG7AiO7AjEDAYkBvQIZxwIkAwGnAcoCGewCJAMBiwH5AiGAAyoCAXiBAyGGAzkCAXKsAyO4AzsCAV3AAyfAA4cCAgFZlANelANpAgFWkQNfkQN2AgFUowNRowNcAgFRoANSoANfAgFP2wMh3wM5AgFE6QMl6QOJAgIBP+oDJe4DPQIBPVwRYxoCATVkEYsBFgIBHIwBEZUCIQIBG5YCEZsCKQIBFakCQakCTAIBEqYCQqYCTwIBEL4CG74CtwEDAawBvwIbxgIkAwGoAcwCHdYCNQMBlwHeAiHoAiwDAYwB/gJc/gJlAgF7+wJd+wJ0AgF5hAN4hAOAAQIBdoMDa4MDfAIBdIED2wGBA+kBAgFzrwNorwN1AgFvsAN/sAOWAQIBbbUDa7UDfgIBa7QDa7QDfgIBabIDZ7IDdAIBZ64Deq4DggECAWWxA22xA34CAWOzA22zA4ABAgFhtgNntgN2AgFfrAPgAawDhQICAV7AA5YBwAOEAgIBWtsD3QHbA4ICAgFF6QOTAekDhgICAUDqA90B6gP+AQIBPmE/YUgCATheQF5NAgE2ZB9kNAIBHWYViQEgAgEfmQJSmQJbAgEZmAJomAJwAgEXlgLNAZYC8QECARa+Ao4BvgK0AQMBrQHEAkrEAlMDAasBwQJLwQJcAwGpAdICZ9ICegMBpQHRAmfRAnoDAaMB0wJj0wJyAwGhAdACadACegMBnwHOAmTOAncDAZ0BzwJ0zwJ8AwGbAdQCatQCewMBmQHMAtgBzAL7AQMBmAHfAiPfAr4CAwGRAeACI+cCLAMBjQFnF20vAgEvbhd+IgIBJX8XgwEvAgEjhAEXiAEpAgEg3wKSAd8CuwIDAZIB5QJS5QJbAwGQAeICU+ICZAMBjgFrcGt4AgEzZ88BZ+8BAgEyalxqdwIBMWlYaWgCATBvGX0eAgEmf9ABf/EBAgEkhgFjhgGQAQIBIW8nb1oCASdxHXgmAgEqex17hQICASl2SHZfAgEtc0lzagIBKw==</sads:DebugSymbol.Symbol>
   </StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -949,6 +950,17 @@
             <x:Double x:Key="StateContainerWidth">220</x:Double>
             <x:Double x:Key="StateContainerHeight">25</x:Double>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_5" sap:VirtualizedContainerService.HintSize="131.2,100.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">142.8,159.2</av:Point>
+            <av:Size x:Key="ShapeSize">131.2,100.8</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">116.59044332405162</x:Double>
+            <x:Double x:Key="StateContainerHeight">64.005011031258675</x:Double>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
