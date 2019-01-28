@@ -113,7 +113,7 @@
       </ui:GetValue.Value>
     </ui:GetValue>
     <InvokeMethod DisplayName="Convert Unit Price to Decimal" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="TryParse" TargetType="x:Decimal">
-      <InArgument x:TypeArguments="x:String">[unitPriceString]</InArgument>
+      <InArgument x:TypeArguments="x:String">[unitPriceString.Split("$"C)(1)]</InArgument>
       <OutArgument x:TypeArguments="x:Decimal">[out_unitPrice]</OutArgument>
     </InvokeMethod>
     <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Order Button" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
@@ -131,7 +131,7 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a489a0b4832e0b8d9646e5b157f63d6d" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='INPUT' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' idx='5' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
       </ui:Click.Target>
     </ui:Click>
-    <sads:DebugSymbol.Symbol>d05DOlxyZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxQcm9jZXNzLnhhbWwMSgOHAQ4CAQFOBWoVAgENawVyEwIBCXMFdhQCAQR3BYUBEAIBAk6rAU7wAQIBDmiYAWioAwIBD3AxcEICAQptmAFtvAMCAQx0LnQ/AgEHdTB1PwIBBYMBmAGDAa8DAgED</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d05DOlxyZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxQcm9jZXNzLnhhbWwMSgOHAQ4CAQFOBWoVAgENawVyEwIBCXMFdhQCAQR3BYUBEAIBAk6rAU7wAQIBDmiYAWioAwIBD3AxcEICAQptmAFtvAMCAQx0LnROAgEHdTB1PwIBBYMBmAGDAa8DAgED</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
