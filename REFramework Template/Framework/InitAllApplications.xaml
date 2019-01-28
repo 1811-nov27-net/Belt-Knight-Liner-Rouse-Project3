@@ -81,19 +81,18 @@
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_10">
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" UnSafe="False" WorkflowFileName="REFramework Template\Framework\LoginSequence.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\LoginSequence.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="ui:Browser" x:Key="in_browser">[out_browser]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_password">[in_Config("Username").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_username">[in_Config("Password").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_password">[in_Config("Password").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_username">[in_Config("Username").ToString]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
-              <sap2010:WorkflowViewState.IdRef>InvokeWorkflowFile_1</sap2010:WorkflowViewState.IdRef>
             </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <sads:DebugSymbol.Symbol>d2RDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxGcmFtZXdvcmtcSW5pdEFsbEFwcGxpY2F0aW9ucy54YW1sDEsDYQ4CAQFMBUyvAQIBEE0FXxYCAQJMhQFMrAECARFNrAFNuwECAQ5NwAFN5wECAQxTC1wWAgEDVA1bJQIBBFZNVloCAQpXTFdsAgEIVIIBVLUBAgEHWExYbAIBBQ==</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d2RDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxGcmFtZXdvcmtcSW5pdEFsbEFwcGxpY2F0aW9ucy54YW1sDEsDYA4CAQFMBUyvAQIBEE0FXhYCAQJMhQFMrAECARFNrAFNuwECAQ5NwAFN5wECAQxTC1sWAgEDVA1aJQIBBFZNVloCAQpXTFdsAgEIVLkBVNcBAgEHWExYbAIBBQ==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -115,7 +114,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Initialization_1" sap:VirtualizedContainerService.HintSize="476.8,766.4" />
+      <sap2010:ViewStateData Id="Initialization_1" sap:VirtualizedContainerService.HintSize="476.8,726.4" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
