@@ -12,7 +12,7 @@
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="out_browser" Type="InArgument(ui:Browser)" />
+    <x:Property Name="out_browser" Type="OutArgument(ui:Browser)" />
     <x:Property Name="in_dtOrders" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
@@ -71,7 +71,6 @@
       <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -96,7 +95,7 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <sads:DebugSymbol.Symbol>d2RDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxGcmFtZXdvcmtcSW5pdEFsbEFwcGxpY2F0aW9ucy54YW1sDU4DZA4CAQFPBU+vAQIBElAFYhYCAQJPhQFPrAECARNQrAFQuwECARBQwAFQ5wECAQ5WC18WAgEDVw1eJQIBBFxQXF0CAQxZTVlaAgEKWkxabAIBCFe5AVfXAQIBB1tMW2wCAQU=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d2RDOlxSZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxGcmFtZXdvcmtcSW5pdEFsbEFwcGxpY2F0aW9ucy54YW1sDU0DYw4CAQFOBU6vAQIBEk8FYRYCAQJOhQFOrAECARNPrAFPuwECARBPwAFP5wECAQ5VC14WAgEDVg1dJQIBBFtQW10CAQxYTVhaAgEKWUxZbAIBCFa5AVbXAQIBB1pMWmwCAQU=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
