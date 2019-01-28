@@ -14,6 +14,7 @@
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_Browser" Type="InArgument(ui:Browser)" />
     <x:Property Name="out_unitPrice" Type="OutArgument(x:Decimal)" />
+    <x:Property Name="out_Status" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -131,7 +132,16 @@
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a489a0b4832e0b8d9646e5b157f63d6d" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='INPUT' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' idx='5' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
       </ui:Click.Target>
     </ui:Click>
-    <sads:DebugSymbol.Symbol>d05DOlxyZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxQcm9jZXNzLnhhbWwMSgOHAQ4CAQFOBWoVAgENawVyEwIBCXMFdhQCAQR3BYUBEAIBAk6rAU7wAQIBDmiYAWioAwIBD3AxcEICAQptmAFtvAMCAQx0LnROAgEHdTB1PwIBBYMBmAGDAa8DAgED</sads:DebugSymbol.Symbol>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">Success</InArgument>
+      </Assign.Value>
+      <sap2010:WorkflowViewState.IdRef>Assign_1</sap2010:WorkflowViewState.IdRef>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d05DOlxyZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxQcm9jZXNzLnhhbWwPSwORAQ4CAQFPBWsVAgERbAVzEwIBDXQFdxQCAQh4BYYBEAIBBocBBY8BDgIBAk+rAU/wAQIBEmmYAWmoAwIBE3ExcUICAQ5umAFuvAMCARB1LnVOAgELdjB2PwIBCYQBmAGEAa8DAgEHjAEwjAE3AgEFiQExiQE9AgED</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -139,7 +149,8 @@
       <sap2010:ViewStateData Id="GetValue_2" sap:VirtualizedContainerService.HintSize="314,106" />
       <sap2010:ViewStateData Id="InvokeMethod_1" sap:VirtualizedContainerService.HintSize="314,132" />
       <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="314,106" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,809">
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,909">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -147,7 +158,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ProcessTransaction_1" sap:VirtualizedContainerService.HintSize="376,889" />
+      <sap2010:ViewStateData Id="ProcessTransaction_1" sap:VirtualizedContainerService.HintSize="376,989" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
