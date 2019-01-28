@@ -2,11 +2,13 @@
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation"
  xmlns:ui="http://schemas.uipath.com/workflow/activities"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
@@ -76,72 +78,115 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="unitPriceString" />
     </Sequence.Variables>
-    <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Quantity" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_TransactionItem.SpecificContent(&quot;Quantity&quot;).ToString]">
-      <ui:SelectItem.Items>
-        <scg:List x:TypeArguments="x:String" Capacity="32">
-          <x:String>1</x:String>
-          <x:String>2</x:String>
-          <x:String>3</x:String>
-          <x:String>4</x:String>
-          <x:String>5</x:String>
-          <x:String>6</x:String>
-          <x:String>7</x:String>
-          <x:String>8</x:String>
-          <x:String>9</x:String>
-          <x:String>10</x:String>
-          <x:String>11</x:String>
-          <x:String>12</x:String>
-          <x:String>13</x:String>
-          <x:String>14</x:String>
-          <x:String>15</x:String>
-          <x:String>16</x:String>
-          <x:String>17</x:String>
-          <x:String>18</x:String>
-          <x:String>19</x:String>
-          <x:String>20</x:String>
-        </scg:List>
-      </ui:SelectItem.Items>
-      <ui:SelectItem.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dcf170483269e2f67f22d228b54e77b0" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='SELECT' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
-      </ui:SelectItem.Target>
-    </ui:SelectItem>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Unit Price" sap2010:WorkflowViewState.IdRef="GetValue_2">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2b2dbf5214fbd0042d991c3df96a5585" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl isleaf='1' tableCol='3' tag='TD' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[unitPriceString]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <InvokeMethod DisplayName="Convert Unit Price to Decimal" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="TryParse" TargetType="x:Decimal">
-      <InArgument x:TypeArguments="x:String">[unitPriceString.Split("$"C)(1)]</InArgument>
-      <OutArgument x:TypeArguments="x:Decimal">[out_unitPrice]</OutArgument>
-    </InvokeMethod>
-    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Order Button" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-      <ui:Click.CursorPosition>
-        <ui:CursorPosition Position="Center">
-          <ui:CursorPosition.OffsetX>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetX>
-          <ui:CursorPosition.OffsetY>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetY>
-        </ui:CursorPosition>
-      </ui:Click.CursorPosition>
-      <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a489a0b4832e0b8d9646e5b157f63d6d" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='INPUT' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' idx='5' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
-      </ui:Click.Target>
-    </ui:Click>
-    <Assign>
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">Success</InArgument>
-      </Assign.Value>
-      <sap2010:WorkflowViewState.IdRef>Assign_1</sap2010:WorkflowViewState.IdRef>
-    </Assign>
-    <sads:DebugSymbol.Symbol>d05DOlxyZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxQcm9jZXNzLnhhbWwPSwORAQ4CAQFPBWsVAgERbAVzEwIBDXQFdxQCAQh4BYYBEAIBBocBBY8BDgIBAk+rAU/wAQIBEmmYAWmoAwIBE3ExcUICAQ5umAFuvAMCARB1LnVOAgELdjB2PwIBCYQBmAGEAa8DAgEHjAEwjAE3AgEFiQExiQE9AgED</sads:DebugSymbol.Symbol>
+    <TryCatch DisplayName="Try Catch">
+      <TryCatch.Try>
+        <Sequence>
+          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Quantity" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_TransactionItem.SpecificContent(&quot;Quantity&quot;).ToString]">
+            <ui:SelectItem.Items>
+              <scg:List x:TypeArguments="x:String" Capacity="32">
+                <x:String>1</x:String>
+                <x:String>2</x:String>
+                <x:String>3</x:String>
+                <x:String>4</x:String>
+                <x:String>5</x:String>
+                <x:String>6</x:String>
+                <x:String>7</x:String>
+                <x:String>8</x:String>
+                <x:String>9</x:String>
+                <x:String>10</x:String>
+                <x:String>11</x:String>
+                <x:String>12</x:String>
+                <x:String>13</x:String>
+                <x:String>14</x:String>
+                <x:String>15</x:String>
+                <x:String>16</x:String>
+                <x:String>17</x:String>
+                <x:String>18</x:String>
+                <x:String>19</x:String>
+                <x:String>20</x:String>
+              </scg:List>
+            </ui:SelectItem.Items>
+            <ui:SelectItem.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="dcf170483269e2f67f22d228b54e77b0" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='SELECT' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
+            </ui:SelectItem.Target>
+          </ui:SelectItem>
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Unit Price" sap2010:WorkflowViewState.IdRef="GetValue_2">
+            <ui:GetValue.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2b2dbf5214fbd0042d991c3df96a5585" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl isleaf='1' tableCol='3' tag='TD' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
+            </ui:GetValue.Target>
+            <ui:GetValue.Value>
+              <OutArgument x:TypeArguments="x:String">[unitPriceString]</OutArgument>
+            </ui:GetValue.Value>
+          </ui:GetValue>
+          <InvokeMethod DisplayName="Convert Unit Price to Decimal" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="TryParse" TargetType="x:Decimal">
+            <InArgument x:TypeArguments="x:String">[unitPriceString.Split("$"C)(1)]</InArgument>
+            <OutArgument x:TypeArguments="x:Decimal">[out_unitPrice]</OutArgument>
+          </InvokeMethod>
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Order Button" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="a489a0b4832e0b8d9646e5b157f63d6d" Selector="[&quot;&lt;html title='Quick Order | Pega Studio Training Web Application' /&gt;&lt;webctrl idx='1' tag='B' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tag='INPUT' rowName='&quot;+in_TransactionItem.SpecificContent(&quot;Product&quot;).ToString+&quot;      View ' idx='5' /&gt;&quot;]" WaitForReady="INTERACTIVE" />
+            </ui:Click.Target>
+          </ui:Click>
+          <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Success</InArgument>
+            </Assign.Value>
+          </Assign>
+          <sap2010:WorkflowViewState.IdRef>Sequence_2</sap2010:WorkflowViewState.IdRef>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="sma:ItemNotFoundException">
+          <ActivityAction x:TypeArguments="sma:ItemNotFoundException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sma:ItemNotFoundException" Name="exception" />
+            </ActivityAction.Argument>
+            <Assign>
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">Invalid Quantity</InArgument>
+              </Assign.Value>
+              <sap2010:WorkflowViewState.IdRef>Assign_2</sap2010:WorkflowViewState.IdRef>
+            </Assign>
+          </ActivityAction>
+          <sap2010:WorkflowViewState.IdRef>Catch`1_1</sap2010:WorkflowViewState.IdRef>
+        </Catch>
+        <Catch x:TypeArguments="s:Exception">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Assign>
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["Failed: "+exception.Message]</InArgument>
+              </Assign.Value>
+              <sap2010:WorkflowViewState.IdRef>Assign_3</sap2010:WorkflowViewState.IdRef>
+            </Assign>
+          </ActivityAction>
+          <sap2010:WorkflowViewState.IdRef>Catch`1_2</sap2010:WorkflowViewState.IdRef>
+        </Catch>
+      </TryCatch.Catches>
+      <sap2010:WorkflowViewState.IdRef>TryCatch_1</sap2010:WorkflowViewState.IdRef>
+    </TryCatch>
+    <sads:DebugSymbol.Symbol>d05DOlxyZXZhdHVyZVxCZWx0LUtuaWdodC1MaW5lci1Sb3VzZS1Qcm9qZWN0M1xSRUZyYW1ld29yayBUZW1wbGF0ZVxQcm9jZXNzLnhhbWwXTQO+AQ4CAQFRBbwBEAIBAlMJlQEUAgEMnQENpQEWAgEIrgENtgEWAgEDVAtwGwIBHHELeBkCARh5C3waAgETfQuLARYCARGMAQuTARQCAQ2iATiiAUgCAQufATmfAUUCAQmzATizAVYCAQawATmwAUUCAQRUsQFU9gECAR1ungFurgMCAR52N3ZIAgEZc54Bc8IDAgEbejR6VAIBFns2e0UCARSJAZ4BiQG1AwIBEpEBNpEBPQIBEI4BN44BQwIBDg==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -150,7 +195,33 @@
       <sap2010:ViewStateData Id="InvokeMethod_1" sap:VirtualizedContainerService.HintSize="314,132" />
       <sap2010:ViewStateData Id="Click_1" sap:VirtualizedContainerService.HintSize="314,106" />
       <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,60" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,909">
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336,822">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Catch`1_1" sap:VirtualizedContainerService.HintSize="404,21">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Catch`1_2" sap:VirtualizedContainerService.HintSize="404,21">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TryCatch_1" sap:VirtualizedContainerService.HintSize="418,1071" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="440,1252">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,7 +229,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="ProcessTransaction_1" sap:VirtualizedContainerService.HintSize="376,989" />
+      <sap2010:ViewStateData Id="ProcessTransaction_1" sap:VirtualizedContainerService.HintSize="480,1332" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
